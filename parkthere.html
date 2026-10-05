@@ -1,0 +1,230 @@
+<!doctype html>
+<html>
+
+<head>
+
+  <title>YIELD TO THE FEELING</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+  <style>
+
+    html, body {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: black;
+      font-family: 'Share Tech Mono', monospace;
+    }
+
+    .background {
+      position: fixed;
+      width: auto;
+      height: 100vh;
+      max-width: 60vw;
+      object-fit: contain;
+      top: 0;
+      right: 0;
+      z-index: 0;
+    }
+
+    .story {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      z-index: 1;
+    }
+
+    .text {
+      position: absolute;
+      top: 30px;
+      left: 35px;
+      width: 45%;
+      color: white;
+      font-size: 20px;
+      line-height: 1.5;
+      text-shadow: 0 0 8px black;
+    }
+
+    .text p {
+      margin: 0 0 30px 0;
+    }
+
+    .check {
+      font-size: 24px;
+      margin-bottom: 30px;
+    }
+
+    .options {
+      display: flex;
+      gap: 25px;
+      flex-wrap: wrap;
+      margin-bottom: 35px;
+    }
+
+    .option {
+      color: white;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 24px;
+      cursor: pointer;
+      transition: 0.3s;
+      text-decoration: none;
+    }
+
+    .option:hover,
+    .option.selected {
+      text-shadow:
+        0 0 5px white,
+        0 0 15px white,
+        0 0 30px white;
+    }
+
+    /* CONTINUE IS LOCKED UNTIL HORNY IS SELECTED */
+
+    .continue {
+      opacity: 0.35;
+      cursor: not-allowed;
+    }
+
+    .continue.unlocked {
+      opacity: 1;
+      cursor: pointer;
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <img class="background" src="parkthere.jpg">
+
+  <div class="story">
+
+    <div class="text">
+
+      <p>
+        You park up. The car goes quiet and the energy shifts.<br>
+        They touch your leg, then look at you.
+      </p>
+
+      <p class="check">
+        CHECK IN WITH YOURSELF
+      </p>
+
+      <p id="feeling">
+        YOU ARE FEELING
+      </p>
+
+      <div class="options">
+
+        <span class="option"
+              onclick="chooseFeeling(this, 'COMFORTABLE')">
+          COMFORTABLE
+        </span>
+
+        <span class="option"
+              onclick="chooseFeeling(this, 'HORNY')">
+          HORNY
+        </span>
+
+        <span class="option"
+              onclick="chooseFeeling(this, 'UNSURE')">
+          UNSURE
+        </span>
+
+      </div>
+
+      <p id="continue">
+        YOU WANT TO
+      </p>
+
+      <div class="options">
+
+        <a
+          id="continueLink"
+          class="option continue"
+          href="#"
+          onclick="goToContinue(event)"
+        >
+          CONTINUE
+        </a>
+
+        <a
+          class="option"
+          href="yellowspiraloffeelings.html"
+        >
+          TALK
+        </a>
+<a href="index.html">BACK TO START</a>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <script>
+
+    let hornySelected = false;
+
+    function chooseFeeling(element, choice) {
+
+      document.getElementById("feeling").innerHTML =
+        "YOU ARE FEELING " + choice;
+
+      document.querySelectorAll(".option").forEach(function(option) {
+        option.classList.remove("selected");
+      });
+
+      element.classList.add("selected");
+
+      /* UNLOCK CONTINUE ONLY IF HORNY IS SELECTED */
+
+      if (choice === "HORNY") {
+
+        hornySelected = true;
+
+        document
+          .getElementById("continueLink")
+          .classList.add("unlocked");
+
+      } else {
+
+        hornySelected = false;
+
+        document
+          .getElementById("continueLink")
+          .classList.remove("unlocked");
+
+      }
+
+    }
+
+
+    function goToContinue(event) {
+
+      if (!hornySelected) {
+
+        event.preventDefault();
+
+        return;
+
+      }
+
+      window.location.href = "temptationcontinuehornycar.html";
+
+    }
+
+  </script>
+
+</body>
+
+</html>
+
+
+
+
+
+

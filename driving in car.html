@@ -1,0 +1,167 @@
+<!doctype html>
+<html>
+<head>
+  <title>YIELD TO THE FEELING</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+  <style>
+
+    html, body {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: black;
+      font-family: 'Share Tech Mono', monospace;
+    }
+
+    .background {
+      position: fixed;
+      width: auto;
+      height: 100vh;
+      max-width: 100vw;
+      object-fit: contain;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 0;
+    }
+
+    .story {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      z-index: 1;
+    }
+
+    .text {
+      position: absolute;
+      top: 30px;
+      left: 35px;
+      color: white;
+      font-size: 20px;
+      line-height: 1.5;
+      text-shadow: 0 0 8px black;
+    }
+
+    .text p {
+      margin: 0 0 20px 0;
+    }
+
+   
+
+    .radio {
+      position: absolute;
+      left: 50%;
+      bottom: 80px;
+      transform: translateX(-50%);
+
+      color: white;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 28px;
+      text-decoration: none;
+      text-transform: uppercase;
+
+      cursor: pointer;
+
+      text-shadow:
+        0 0 5px white,
+        0 0 10px white,
+        0 0 20px white,
+        0 0 35px white;
+
+      transition: 0.2s ease;
+    }
+
+    .radio:hover {
+      transform: translateX(-50%) scale(1.08);
+
+      text-shadow:
+        0 0 8px white,
+        0 0 18px white,
+        0 0 30px white,
+        0 0 50px white;
+    }
+
+    .choices {
+      position: absolute;
+      right: 70px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 35px;
+    }
+
+    .choices a {
+      color: white;
+      text-decoration: none;
+      font-size: 28px;
+      text-shadow:
+        0 0 5px white,
+        0 0 15px white,
+        0 0 30px white;
+    }
+
+    .choices a:hover {
+      transform: scale(1.08);
+    }
+
+  </style>
+
+</head>
+
+<body>
+  <a href="index.html">BACK TO START</a>
+
+
+
+  <img
+    class="background"
+    src="left-ezgif.com-video-to-gif-converter.gif"
+  >
+
+  <div class="story">
+
+    <div class="text">
+
+      <p></p>
+
+      <p></p>
+
+    </div>
+
+    <div
+      class="radio"
+      id="radioButton"
+    >
+      PUT ON RADIO
+    </div>
+
+
+    <audio id="radioAudio" src="audio radio.mp3"></audio>
+
+
+    <div class="choices">
+
+    </div>
+
+  </div>
+
+
+  <script>
+
+    const radioButton = document.getElementById("radioButton");
+    const radioAudio = document.getElementById("radioAudio");
+
+    radioButton.addEventListener("click", function() {
+      radioAudio.play();
+    });
+
+  </script>
+
+</body>
+
+</html>
+
