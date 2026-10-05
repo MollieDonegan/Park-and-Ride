@@ -56,32 +56,45 @@
 </head>
 
 <body>
-<a href="index.html">BACK TO START</a>
+  <a href="index.html">BACK TO START</a>
 
-<audio src="SHEEPSEXAUDIO.mp3" autoplay loop></audio>
+  <audio id="sheepAudio" src="SHEEPSEXAUDIO.mp3" autoplay loop muted playsinline></audio>
 
-<div>
+  <div>
 
-  <h1></h1>
+    <h1></h1>
 
-  <img src="ezgif.com-crop.gif">
+    <img src="ezgif.com-crop.gif">
 
-  <p>
-    I MEAN SUPPOSING GOD MADE IT AN AWFUL FEELING, THEN NOBODY WOULD DO AND THEN WE WOULD NOT HAVE ANY BABIES.
-    HE MADE IT THIS SPECIAL EXCITING FEELING SO MUCH SO THAT PEOPLE ARE TEMPTED TO DO IT BEFORE THEY ARE MARRIED.
-    WELL THAT'S JUST AN ORDINARY HUMAN
-    <a href="temptationcontinuehornycar.html">TEMPTATION.</a>
-    BUT GOD DOES NOT WANT PEOPLE TO HAVE SEXUAL INTERCOURSE BEFORE THEY ARE MARRIED
-    AND YOU REMEMBER HE'S THE INVENTOR AND
-    <a href="yellowspiraloffeelings.html">HE KNOWS WHAT'S BEST.</a>
-</div> 
-Audio Irish Sex Education for Girls with Angela (1980)
+    <p>
+      I MEAN SUPPOSING GOD MADE IT AN AWFUL FEELING, THEN NOBODY WOULD DO AND THEN WE WOULD NOT HAVE ANY BABIES.
+      HE MADE IT THIS SPECIAL EXCITING FEELING SO MUCH SO THAT PEOPLE ARE TEMPTED TO DO IT BEFORE THEY ARE MARRIED.
+      WELL THAT'S JUST AN ORDINARY HUMAN
+      <a href="temptationcontinuehornycar.html">TEMPTATION.</a>
+      BUT GOD DOES NOT WANT PEOPLE TO HAVE SEXUAL INTERCOURSE BEFORE THEY ARE MARRIED
+      AND YOU REMEMBER HE'S THE INVENTOR AND
+      <a href="yellowspiraloffeelings.html">HE KNOWS WHAT'S BEST.</a>
+    </p>
 
+  </div>
 
-</p>
+  <script>
+    const sheepAudio = document.getElementById('sheepAudio');
 
-</div>
+    function tryPlayAudio() {
+      sheepAudio.muted = false;
+      sheepAudio.play().catch(() => {
+        document.addEventListener('click', () => {
+          sheepAudio.muted = false;
+          sheepAudio.play();
+        }, { once: true });
+      });
+    }
+
+    window.addEventListener('load', () => {
+      setTimeout(tryPlayAudio, 200);
+    });
+  </script>
 
 </body>
 </html>
-
