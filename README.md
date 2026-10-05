@@ -1,2 +1,2 @@
-# Park-and-Ride
+# ParkandRide
 Non Linear Text Game
